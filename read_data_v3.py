@@ -6,6 +6,8 @@ from class_file import *
 from utils import get_opt
 
 from getTable import get_table
+
+import copy
 #t_name = 'shark_attack'
 # t_name = 'job'
 # #Table = {"country":'string', 'gender':'string', 'fatality':'string','activity':'string','attack':'number','year':'date', 'count(t)':'number'}
@@ -14,6 +16,53 @@ from getTable import get_table
 #          'city':'string','country':'string','programming_language':'string','salary':'number','plantform':'string','count(t)':'number'
 #          }
 t_name,Table = get_table()
+
+
+def generate_index(inital,s,count):
+    if count == 0:
+        s.append(copy.copy(inital))
+        return
+    for i in range(2):
+        inital.append(i)
+        generate_index(inital,s,count-1)
+        del inital[-1]
+
+
+def no_pat(tag,index):
+    s = []
+    for i in range(len(tag[index])):
+        if tag[index][i] != 'pat':
+            s.append(tag[index][i])
+    return s
+
+def generate_multi_tags(tag):
+    #tag中可能有pat所以要拆分
+    #获取pat的索引
+    pat_index = []
+    index_count = 0
+    for tag_index in range(len(tag)):
+        if 'pat' in tag[tag_index]:
+            pat_index.append(tag_index)
+            index_count += 1
+    #产生索引
+    s = []
+    generate_index([],s,index_count)
+    data = []
+
+    for s_index in range(len(s)):
+        tag_copy = copy.copy(tag)
+        for index,value in zip(pat_index,s[s_index]):
+            if value == 0:
+                tag_copy[index] = []
+            else:
+                tag_copy[index] = no_pat(tag_copy,index)
+        data.append(tag_copy)
+    return data
+
+
+
+
+
 def read_data(path):
     data = {}
     sql = {}
@@ -140,6 +189,7 @@ def read_data(path):
                         raise ('Type is not right')
             if len(label): tags.append(label)
         if len(tags) == 0: print(item);continue
+        tags = generate_multi_tags(tags)
         data[item["raw_utterance"]] = tags
         sql[item['raw_utterance']] = item["sql_info"]
         abstract_data[item['raw_utterance']] = item['abstract_utterance']
