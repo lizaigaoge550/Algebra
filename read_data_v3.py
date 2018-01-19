@@ -36,11 +36,9 @@ def generate_multi_tags(tags):
     pat_index = []
     index_count = 0
     for tag_index in range(len(tags)):
-        for tag in tags[tag_index]:
-            if 'pat' in tag:
-                pat_index.append(tag_index)
-                index_count += 1
-                break
+        if 'pat' in tags[tag_index]:
+            pat_index.append(tag_index)
+            index_count += 1
     if index_count == 0:
         return [tags]
     #产生索引
@@ -68,10 +66,6 @@ def read_data(path):
         item = json.load(open(eachfile,encoding='utf-8-sig'))
         # 拿出tag
         utterance = item['new_tag_utterance']
-
-        #取出原来的utterance
-        raw_utterance = item['raw_utterance'].split()
-
         tags = []
         for i in range(len(utterance)):
             tag = utterance[i]['tags']  # 是一个list
@@ -83,7 +77,8 @@ def read_data(path):
                 # 首先提取type
                 value = tag[j]['Type']
                 # #如果value 是 c 和 V, T 的话
-                if value == 'c' or value == 'v' or value == 'T' or value == 'N' or value == 'D' or value == 'Blank' or value == 'Excluding':
+                if value == 'c' or value == 'v' or value == 'T' or value == 'N' or value == 'D' or value == 'Blank' \
+                        or value == 'Excluding' or value == 'pat':
                     try:
                         description = tag[j]['value'].split('-')[0]
                     except:
@@ -96,8 +91,6 @@ def read_data(path):
                         if value == 'c':
 
                             label.append([cClass(t_name=t_name, c_name=c_name, c_type=Table[c_name], value=description),left,right])
-
-
                         if value == 'v':
                             label.append([VClass(t_name=t_name, c_name=c_name, c_type=Table[c_name],
                                                 value=tag[j]['value']),left,right])
@@ -116,6 +109,8 @@ def read_data(path):
                     elif value == 'Excluding':
                         f = ExcludeClass(None, None, None, 'Excluding')
                         label.append([f,left,right])
+                    elif value == 'pat':
+                        label.append('pat')
                     else:
                         print(value)
                         raise ('Type is not right')

@@ -23,18 +23,8 @@ def addPunctuation(utterance):
 
 def data_abstact(destpath, srcpath):
     for eachfile in glob.glob(os.path.join(destpath, '*')):
-        try:
-            item = json.load(open(eachfile, encoding='utf-8-sig'))
-        except Exception as e:
-            print(eachfile)
-            print(e)
-            exit(1000)
+        item = json.load(open(eachfile, encoding='utf-8-sig'))
         raw_utterance = nltk.tokenize.word_tokenize(item['raw_utterance'])
-        #raw_utterance = re.split('\s+',raw_utterance)
-
-        #加入标点符号
-        #raw_utterance = addPunctuation(raw_utterance)
-        #raw_utterance
 
         tag_info = item['new_tag_utterance']
         mark = {}
@@ -93,6 +83,7 @@ def data_abstact(destpath, srcpath):
 
         #写入文件
         if not os.path.exists(srcpath): os.mkdir(srcpath)
-        json.dump(item,open(os.path.join(srcpath,eachfile.split('\\')[-1]),'w'),indent=4)
+        json.dump(item,open(os.path.join(srcpath,eachfile.split('\\')[-1]),'w',encoding='utf-8'),
+                  indent=4,sort_keys=True,ensure_ascii=False)
 
-data_abstact('D:\\Git\\AnnaTalkParser\\Data\\SharkAttackNew','shark_data_post_1')
+data_abstact('testDir','shark_data_post')

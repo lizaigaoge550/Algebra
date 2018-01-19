@@ -1,0 +1,63 @@
+{
+    "id": "0007",
+    "raw_utterance": "1840 至 2000 年 间 的 鲨 鱼 攻击",
+    "eng_ids": [
+        "283_1"
+    ],
+    "raw_english_utterances": [
+        "show the shark attacks in years from 1840-2000"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 4,
+            "inter_utterance": "1840 至 2000 年 间"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "T",
+                    "value": "鲨鱼"
+                },
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 6,
+            "right_index": 8,
+            "inter_utterance": "攻击"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            }
+        ],
+        "groupby": [],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.攻击 "
+    }
+}

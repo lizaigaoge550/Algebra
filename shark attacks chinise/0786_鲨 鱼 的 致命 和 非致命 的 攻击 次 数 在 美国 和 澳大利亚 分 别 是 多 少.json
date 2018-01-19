@@ -1,0 +1,103 @@
+{
+    "id": "0786",
+    "raw_utterance": "鲨 鱼 的 致命 和 非致命 的 攻击 次 数 在 美国 和 澳大利亚 分 别 是 多 少",
+    "eng_ids": [
+        "178_1"
+    ],
+    "raw_english_utterances": [
+        "show a chart of fatal and non fatal attacks in USA and Australia"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.致命性.致命"
+                }
+            ],
+            "left_index": 3,
+            "right_index": 3,
+            "inter_utterance": "致命"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.致命性.非致命"
+                }
+            ],
+            "left_index": 5,
+            "right_index": 5,
+            "inter_utterance": "非致命"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 7,
+            "right_index": 7,
+            "inter_utterance": "攻击"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.国家.美国"
+                }
+            ],
+            "left_index": 11,
+            "right_index": 11,
+            "inter_utterance": "美国"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.国家.澳大利亚"
+                }
+            ],
+            "left_index": 13,
+            "right_index": 13,
+            "inter_utterance": "澳大利亚"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.攻击.sum",
+            "鲨鱼.国家",
+            "鲨鱼.致命性"
+        ],
+        "where": [
+            {
+                "鲨鱼.致命性": [
+                    "致命",
+                    "非致命"
+                ]
+            },
+            {
+                "鲨鱼.国家": [
+                    "美国",
+                    "澳大利亚"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.国家",
+            "鲨鱼.致命性"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "(鲨.致命性 = '致命' or 鲨.致命性 = '非致命') ### (鲨.国家 = '美国' or 鲨.国家 = '澳大利亚') ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.致命性 ### sum(鲨.攻击) ### 鲨.国家 "
+    }
+}

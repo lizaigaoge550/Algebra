@@ -1,0 +1,74 @@
+{
+    "id": "0026",
+    "raw_utterance": "2007 年 的 鲨 鱼 攻击 了 哪 些 国家",
+    "eng_ids": [
+        "203_2"
+    ],
+    "raw_english_utterances": [
+        "show country of shark attacks in 2007"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 1,
+            "inter_utterance": "2007 年"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "T",
+                    "value": "鲨鱼"
+                },
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 3,
+            "right_index": 5,
+            "inter_utterance": "攻击"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.国家"
+                }
+            ],
+            "left_index": 9,
+            "right_index": 9,
+            "inter_utterance": "国家"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.国家"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            }
+        ],
+        "groupby": [],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "鲨.年 = datespan(year, datetime'2007-01-01T00:00:00') ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.年 ### 鲨.攻击 ### 鲨.国家 "
+    }
+}

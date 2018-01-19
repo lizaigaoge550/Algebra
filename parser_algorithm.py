@@ -320,121 +320,19 @@ def bottom_up_parser(node1, node2, gDict,key):
     # 两种和并的方式 1 填写参数, 2 根据grammar
     # 先看填写参数的方式, 填写参数方式表达式中得有lambda
 
-    node = ""
-
-    if 'lambda' in node1.val.value or 'lambda' in node2.val.value:
-        # 分成两种情况, 1: lambda 出现在两个表达式中, 2 lambda只出现在一个表达式中
-        if 'lambda' in node1.val.value and 'lambda' in node2.val.value:  # lambda(C).F , lambda(F).G=group(F,C) --> lambda(C),G??
-            # lambda(C).F, lambda(F,C).G=group(F,C) --> lambda(C1,C2) G
-            return g
-        else:
-            # lambda 只出现在一个表达式中
-            if 'lambda' in node1.val.value:  # lambda(C).F  C
-                arg, exp = get_arg_express(node1.val)  # [C], F
-                if node2.val.value in arg:
-                    new_arg = generate_new_arg(arg, node2.val.value)
-                    if len(new_arg) > 3: return g
-                    if new_arg == []:
-                        gene = createVal_1(node1.val, node2.val, exp, key)
-                        if gene == None: return g
-                        node = Node(node1, node2, gene, node1.start, node2.end)
-                    else:
-                        s = 'lambda('
-                        for i in range(len(new_arg)):
-                            if i != len(new_arg) - 1:
-                                s += (new_arg[i] + ",")
-                            else:
-                                s += (new_arg[i] + ")")
-                        exp = s + "." + exp
-                        gene = createVal_1(node1.val, node2.val, exp, key)
-                        if gene == None: return g
-                        node = Node(node1, node2, gene, node1.start, node2.end)
-                if node != "":
-                    # type-rasing
-                    l = [node]
-                    #l = type_rasing(gDict, l,key)
-                    g += l
-
-                else:  # lambda(F).G T 这个时候 T和lambda的参数不匹配, 但是G和T能生成一个T
-                    nodes = []
-                    prefix = node1.val.value.split('.')[0]
-                    for (rhs, lhs, func) in gDict:
-                        rhs = rhs.split(',')
-                        # 只有一个order带3个参数,但sort的lambda,所以只考虑两个参数的情况
-                        if len(rhs) == 2:
-                            if (exp == rhs[0] and node2.val.value == rhs[1]) or (
-                                    exp == rhs[1] and node2.val.value == rhs[0]):
-                                gene = createVal_2(node1.val, node2.val, func, prefix + '.' + lhs)
-                                if gene == None: continue
-                                node = Node(node1, node2, gene, node1.start, node2.end)
-                                nodes.append(node)
-
-                    if nodes != []:
-                        # type_rasing
-                        l = nodes
-                        #l = type_rasing(gDict, l,key)
-                        g += l
-
-            # lambda 出现在node2中
-            else:
-                # 获取list1[i]的参数列表
-                arg, exp = get_arg_express(node2.val)  # [C], F
-                if node1.val.value in arg:
-                    new_arg = generate_new_arg(arg, node1.val.value)
-                    if new_arg == []:
-                        gene = createVal_1(node2.val, node1.val, exp, key)
-                        if gene == None: return g
-                        node = Node(node1, node2, gene, node1.start,node2.end)
-                    else:
-                        s = 'lambda('
-                        for i in range(len(new_arg)):
-                            if i != len(new_arg) - 1:
-                                s += (new_arg[i] + ",")
-                            else:
-                                s += (new_arg[i] + ")")
-                        exp = s + "." + exp
-                        gene = createVal_1(node2.val, node1.val, exp,key)
-                        if gene == None: return g
-                        node = Node(node1, node2, gene, node1.start,node2.end)
-                    if node != "":
-                        l = [node]
-                        g += l
-
-                else:  # T , lambda(F).G  这个时候 T和lambda的参数不匹配, 但是G和T能生成一个T
-                    nodes = []
-                    prefix = node2.val.value.split('.')[0]
-                    for (rhs, lhs, func) in gDict:
-                        rhs = rhs.split(',')
-                        # 只有一个order带3个参数,但sort的lambda,所以只考虑两个参数的情况
-                        if len(rhs) == 2:
-                            if (exp == rhs[0] and node1.val.value == rhs[1]) or (
-                                    exp == rhs[1] and node1.val.value == rhs[0]):
-                                gene = createVal_2(node2.val, node1.val, func, prefix + '.' + lhs)
-                                if gene == None: continue
-                                node = Node(node1, node2, gene , node1.start, node2.end)
-                                nodes.append(node)
-                    if nodes != []:
-                        # type_rasing
-                        l = nodes
-                        #l = type_rasing(gDict, l, key)
-                        g += l
-
-
     # 讨论根据grammar往上建树
-    else:  # T , G --> T
-        nodes = []
-        for (rhs, lhs, func) in gDict:
-            rhs = rhs.split(',')
-            # 只有一个order带3个参数,但sort的lambda,所以只考虑两个参数的情况
-            if len(rhs) == 2:
-                if (node1.val.value == rhs[0] and node2.val.value == rhs[1]) or (
-                        node1.val.value == rhs[1] and node2.val.value == rhs[0]):
-                    gene = createVal_3(node1.val, node2.val, func, lhs,key)
-                    if gene == None: continue
-                    node = Node(node1, node2, gene, node1.start, node2.end)
-                    nodes.append(node)
-        if nodes != []:
-            # type_rasing
-            l = nodes
-            g += l
+    nodes = []
+    for (rhs, lhs, func) in gDict:
+        rhs = rhs.split(',')
+        # 只有一个order带3个参数,但sort的lambda,所以只考虑两个参数的情况
+        if len(rhs) == 2:
+            if (node1.val.value == rhs[0] and node2.val.value == rhs[1]) or (
+                    node1.val.value == rhs[1] and node2.val.value == rhs[0]):
+                gene = createVal_3(node1.val, node2.val, func, lhs,key)
+                if gene == None: continue
+                node = Node(node1, node2, gene, node1.start, node2.end)
+                nodes.append(node)
+    if nodes != []:
+        l = nodes
+        g += l
     return g

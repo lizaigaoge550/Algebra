@@ -1,0 +1,79 @@
+{
+    "id": "0010",
+    "raw_utterance": "1912 年 致命 鲨 鱼 攻击 的 次 数",
+    "eng_ids": [
+        "163_0"
+    ],
+    "raw_english_utterances": [
+        "shark attacks in 1912 fatal fatality"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 1,
+            "inter_utterance": "1912 年"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.致命性.致命"
+                }
+            ],
+            "left_index": 2,
+            "right_index": 2,
+            "inter_utterance": "致命"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "T",
+                    "value": "鲨鱼"
+                },
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 3,
+            "right_index": 5,
+            "inter_utterance": "攻击"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            },
+            {
+                "鲨鱼.致命性": [
+                    "致命"
+                ]
+            }
+        ],
+        "groupby": [],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "鲨.年 = datespan(year, datetime'1912-01-01T00:00:00') ### 鲨.致命性 = '致命' ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.年 ### 鲨.致命性 ### sum(鲨.攻击) "
+    }
+}

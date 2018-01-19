@@ -42,7 +42,7 @@ def postprocessing(dic,length):
 
 def dfs(value,key):
     global s
-    if value.description != None and type(value) != Modify  :
+    if value.description != None and type(value) != Modify and type(value) != CClass  :
         if type(value.description) == list:
             try:
                 s += '(' + ",".join(value.description)+ ')'
@@ -126,7 +126,7 @@ def slotFilling(parameter, parentType, default, key): #这个默认的值代表N
     elif type(parameter) == ExcludeClass:
         return
 
-    elif type(parameter) == cClass or type(parameter) == CClass:
+    elif type(parameter) == cClass:
         if default != None:
             assert type(default) == DClass or type(default) == NClass or type(default) == VClass or type(default) == BlankClass
             flag = False
@@ -325,7 +325,7 @@ def slotFilling(parameter, parentType, default, key): #这个默认的值代表N
                 if parentType == Group or parentType == Combine:
                     return iteration(parameter.param_list[1].val,parentType=parentType,default=parameter.param_list[0].val,key=key)
                 else:
-                    return iteration(root=parameter.param_list[0].val, default=parameter.param_list[1].val, key=key)
+                    return iteration(root=parameter.param_list[1].val, default=parameter.param_list[0].val, key=key)
 
             flag = False
             for i in range(len(res['where'])):
@@ -507,6 +507,7 @@ def  iteration(root,key,parentType=None,default=None):
     except Exception as e:
         print(key)
         print(e)
+        exit(1000)
 
 
 import json
@@ -518,11 +519,16 @@ def output_sql_tree(new,res,node,key,file_name):
     r = json.dumps(new)
     r1 = json.dumps(res)
     file_name = re.sub("[\.\!\/_,$%^*?(+\"\']+|[+——！，。？、~@#￥%……&*（）]", "",file_name)
-    f = open(os.path.join('sql_tree',file_name),'a')
+    f = open(os.path.join('sql_tree',file_name),'a',encoding='utf-8')
 
     f.write(s+'\n')
-    f.write(r1+'\n\n')
-    f.write(r+'\n')
+    f.write("orig : ")
+    json.dump(r1,f,ensure_ascii=False)
+    f.write('\n')
+    f.write("new : ")
+    json.dump(r,f,ensure_ascii=False)
+    f.write('\n\n')
+
     f.write('\n')
 
 
@@ -536,8 +542,6 @@ def  generate_dict(dic,length, key, true_sql):
     #proportion = open('proportion.txt','a')
     flag = False
 
-    sum_len = len(new_node)
-    correct = 0
     for root in new_node:
         assert root.val.value == 'T'
         init()
@@ -748,7 +752,7 @@ def compare(predict, true, key):
 
     #在select中把where的东西去掉
     #predict = remove_select_where(predict)
-    predict = putPatch(predict)
+    #predict = putPatch(predict)
     if predict['select'] == []:predict['select'].append(t_name)
 
     select = compareList(predict['select'], true_sql['select'])
@@ -762,8 +766,9 @@ def compare(predict, true, key):
 
 def generate_data(dic,length,key,abs,true_sql):
     global res
+    global s
     new_node = postprocessing(dic, length)
-
+    output_file = open(os.path.join('output',key),'a',encoding='utf-8')
     result = []
     analysis = False
     all_correct = True
@@ -775,6 +780,9 @@ def generate_data(dic,length,key,abs,true_sql):
         if type(root.val) == TClass:
             res['select'].append(t_name)
         else:
+            s = ""
+            dfs(root.val,key)
+            output_file.write(s+'\n')
             iteration(root.val, key)
 
         if res['select'] == [] and res['where'] == []: res['select'].append(t_name)

@@ -1,0 +1,94 @@
+{
+    "abstract_utterance": "D ， 发 生 鲨 鱼 c 最 多 是 哪 c",
+    "eng_ids": [
+        "305_1"
+    ],
+    "id": "0002",
+    "new_tag_utterance": [
+        {
+            "inter_utterance": "D",
+            "left_index": 0,
+            "right_index": 0,
+            "tags": [
+                {
+                    "Type": "D",
+                    "col": "鲨鱼.年",
+                    "value": "daterange"
+                }
+            ]
+        },
+        {
+            "inter_utterance": "c",
+            "left_index": 6,
+            "right_index": 6,
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ]
+        },
+        {
+            "inter_utterance": "最 多",
+            "left_index": 7,
+            "right_index": 8,
+            "tags": [
+                {
+                    "Type": "pat",
+                    "value": "non"
+                },
+                {
+                    "Type": "N",
+                    "value": "max"
+                }
+            ]
+        },
+        {
+            "inter_utterance": "c",
+            "left_index": 11,
+            "right_index": 11,
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.年"
+                }
+            ]
+        }
+    ],
+    "raw_english_utterances": [
+        "show year from 1840 to 2000 that had most shark attacks"
+    ],
+    "raw_sql_info": {
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "鲨.攻击:Descending ",
+        "select": "鲨.攻击 ",
+        "where": ""
+    },
+    "raw_utterance": "1840 到 2000 ， 发 生 鲨 鱼 攻击 最 多 是 哪 年",
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "groupby": [
+            "鲨鱼.年"
+        ],
+        "orderby": [],
+        "select": [
+            "鲨鱼.年",
+            "鲨鱼.攻击.sum"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            },
+            {
+                "鲨鱼.攻击.sum": [
+                    "max"
+                ]
+            }
+        ]
+    }
+}

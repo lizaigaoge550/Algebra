@@ -1,0 +1,8 @@
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Count(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Count(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Min(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Min(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Max(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Max(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Sum(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Sum(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))

@@ -1,0 +1,93 @@
+{
+    "id": "0021",
+    "raw_utterance": "2004 年 攻击 次 数 最 多 的 国家",
+    "eng_ids": [
+        "390_1"
+    ],
+    "raw_english_utterances": [
+        "which country had the most attacks in 2004"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 1,
+            "inter_utterance": "2004 年"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 2,
+            "right_index": 2,
+            "inter_utterance": "攻击"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "pat",
+                    "value": "non"
+                },
+                {
+                    "Type": "N",
+                    "value": "max"
+                }
+            ],
+            "left_index": 5,
+            "right_index": 6,
+            "inter_utterance": "最 多"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.国家"
+                }
+            ],
+            "left_index": 8,
+            "right_index": 8,
+            "inter_utterance": "国家"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.国家",
+            "鲨鱼.攻击.sum"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            },
+            {
+                "鲨鱼.攻击.sum": [
+                    "max"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.国家"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "鲨.年 = datespan(year, datetime'2004-01-01T00:00:00') ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "鲨.攻击:Descending ",
+        "select": "鲨.年 ### 鲨.攻击 ### 鲨.国家 "
+    }
+}

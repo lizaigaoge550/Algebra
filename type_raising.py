@@ -93,15 +93,12 @@ def type_rasing(gDict, nodelist, start, end, key=""):
         if value == None:
             print(key)
             exit(100)
-        if 'lambda' not in value: #(c-- > F=count(c))
-            for rhs, lhs, func in gDict:
-                if rhs == value and lhs not in values:
-                    index = values.index(rhs)
-                    option = createVal(lhs, func, nodelist[index], lhs)
-                    if option == None: continue
-                    values.append(lhs)
-                    node = Node(nodelist[index], None, option, start, end)
-                    nodelist.append(node)
-        else:
-            continue
+        for rhs, lhs, func in gDict:
+            if rhs == value:
+                index = values.index(rhs)
+                option = createVal(lhs, func, nodelist[index], lhs)
+                if option == None: continue
+                values.append(lhs)
+                node = Node(nodelist[index], None, option, start, end)
+                nodelist.append(node)
     return nodelist

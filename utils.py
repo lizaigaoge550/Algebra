@@ -52,18 +52,12 @@ def get_opt(value):
         return Or(None,None, None)
     elif value == 'Not':
         return Not(None,None,None)
-    elif value == 'argmax':
-        return Argmax(None,None,None)
-    elif value == 'argmin':
-        return Argmin(None,None,None)
     elif value == 'combine':
         return Combine(None,None,None)
     elif value == 'modify':
         return Modify(None,None,None)
     elif value == 'combineF':
         return CombineF(None,None,None)
-    elif value == 'order':
-        return Order(None,None,None)
     else:return None
 
 #def extract_aggregate_value()

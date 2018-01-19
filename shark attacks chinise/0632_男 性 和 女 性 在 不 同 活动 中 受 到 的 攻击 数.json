@@ -1,0 +1,86 @@
+{
+    "id": "0632",
+    "raw_utterance": "男 性 和 女 性 在 不 同 活动 中 受 到 的 攻击 数",
+    "eng_ids": [
+        "80_2"
+    ],
+    "raw_english_utterances": [
+        "Display the number of shark attacks by activities for males and females"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.性别.男"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 0,
+            "inter_utterance": "男"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.性别.女"
+                }
+            ],
+            "left_index": 3,
+            "right_index": 3,
+            "inter_utterance": "女"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.活动"
+                }
+            ],
+            "left_index": 8,
+            "right_index": 8,
+            "inter_utterance": "活动"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 13,
+            "right_index": 13,
+            "inter_utterance": "攻击"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.活动",
+            "鲨鱼.攻击.sum",
+            "鲨鱼.性别"
+        ],
+        "where": [
+            {
+                "鲨鱼.性别": [
+                    "男",
+                    "女"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.活动",
+            "鲨鱼.性别"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "(鲨.性别 = '男' or 鲨.性别 = '女') ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.性别 ### 鲨.活动 ### sum(鲨.攻击) "
+    }
+}

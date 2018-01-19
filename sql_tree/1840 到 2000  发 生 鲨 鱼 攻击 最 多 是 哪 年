@@ -1,0 +1,540 @@
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Count(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Count(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Min(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Min(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Max(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Max(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Sum(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Sum(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(鲨鱼.攻击,鲨鱼.年)(鲨鱼))
+orig : "{\"where\": [], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [[\"\\u9ca8\\u9c7c.\\u653b\\u51fb\", \"\\u9ca8\\u9c7c.\\u5e74\"]]}"
+new : "{\"where\": [], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Select(In(daterange)(Modify(In(鲨鱼.攻击)(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c\"]}"
+new : "{\"where\": [], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Count(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Min(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Max(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Sum(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Count(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Count(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Min(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Min(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Max(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Max(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Sum(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Sum(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(And(In(鲨鱼.年)(daterange))(In(鲨鱼.攻击)(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(And(In(鲨鱼.年)(daterange))(In(鲨鱼.攻击)(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Count(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Count(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Min(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Min(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Max(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Max(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Sum(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Sum(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(Modify(In(鲨鱼.年)(daterange))(鲨鱼.攻击))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(Modify(In(Modify(In(鲨鱼.年)(daterange))(鲨鱼.攻击))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"]}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+new : "{\"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"groupby\": [], \"orderby\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"]}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Count(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Count(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Min(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Min(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Max(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Max(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(Sum(鲨鱼.攻击))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Sum(鲨鱼.攻击))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(鲨鱼.攻击,鲨鱼.年)(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [], \"select\": [[\"\\u9ca8\\u9c7c.\\u653b\\u51fb\", \"\\u9ca8\\u9c7c.\\u5e74\"]], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Select(In(daterange)(Modify(In(鲨鱼.攻击)(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [], \"select\": [\"\\u9ca8\\u9c7c\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [], \"select\": [\"\\u9ca8\\u9c7c\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Count(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Min(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Max(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(Sum(鲨鱼.攻击))(In(max)(Count(鲨鱼.年)))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Count(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Count(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Min(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Min(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Max(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Max(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(Group(In(Sum(鲨鱼.攻击))(max))(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(鲨鱼.年)(daterange))(CombineF(In(Sum(鲨鱼.攻击))(max))(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(In(max)(Count(鲨鱼.年))))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u5e74.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(And(In(鲨鱼.年)(daterange))(In(鲨鱼.攻击)(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(And(In(鲨鱼.年)(daterange))(In(鲨鱼.攻击)(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Count(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Count(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Min(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Min(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Max(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Max(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(Modify(In(鲨鱼.年)(daterange))(In(Sum(鲨鱼.攻击))(max)))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(Modify(In(鲨鱼.年)(daterange))(In(Sum(鲨鱼.攻击))(max)))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Modify(In(Modify(In(鲨鱼.年)(daterange))(鲨鱼.攻击))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(Modify(In(Modify(In(鲨鱼.年)(daterange))(鲨鱼.攻击))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Count(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.count\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Min(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.min\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Max(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.max\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+
+(Project(Group(In(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(max))(鲨鱼.年))(鲨鱼))
+orig : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+new : "{\"groupby\": [\"\\u9ca8\\u9c7c.\\u5e74\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74\"], \"orderby\": []}"
+
+
+(Project(CombineF(In(Modify(In(鲨鱼.年)(daterange))(Sum(鲨鱼.攻击)))(max))(Count(鲨鱼.年)))(鲨鱼))
+orig : "{\"groupby\": [], \"from\": [\"\\u9ca8\\u9c7c\"], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+new : "{\"groupby\": [], \"where\": [{\"\\u9ca8\\u9c7c.\\u5e74\": [\"daterange\"]}, {\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\": [\"max\"]}], \"select\": [\"\\u9ca8\\u9c7c.\\u653b\\u51fb.sum\", \"\\u9ca8\\u9c7c.\\u5e74.count\"], \"orderby\": []}"
+
+

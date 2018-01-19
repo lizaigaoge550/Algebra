@@ -1,0 +1,101 @@
+{
+    "id": "0009",
+    "raw_utterance": "1910 年 到 2010 年 致命 攻击 和 非致命 攻击 的 发 生 数",
+    "eng_ids": [
+        "97_2"
+    ],
+    "raw_english_utterances": [
+        "graph the fatal and non fatal shark attacks between 1910-2010 in a line graph"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 4,
+            "inter_utterance": "1910 年 到 2010 年"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.致命性.致命"
+                }
+            ],
+            "left_index": 5,
+            "right_index": 5,
+            "inter_utterance": "致命"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 6,
+            "right_index": 6,
+            "inter_utterance": "攻击"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "v",
+                    "value": "鲨鱼.致命性.非致命"
+                }
+            ],
+            "left_index": 8,
+            "right_index": 8,
+            "inter_utterance": "非致命"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 9,
+            "right_index": 9,
+            "inter_utterance": "攻击"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.攻击.sum",
+            "鲨鱼.致命性"
+        ],
+        "where": [
+            {
+                "鲨鱼.致命性": [
+                    "致命",
+                    "非致命"
+                ]
+            },
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.致命性"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "鲨.致命性 = '致命' ### 鲨.致命性 = '非致命' ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.致命性 ### sum(鲨.攻击) "
+    }
+}

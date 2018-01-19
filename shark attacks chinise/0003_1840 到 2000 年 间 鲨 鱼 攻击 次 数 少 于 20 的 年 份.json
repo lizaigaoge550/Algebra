@@ -1,0 +1,93 @@
+{
+    "id": "0003",
+    "raw_utterance": "1840 到 2000 年 间 鲨 鱼 攻击 次 数 少 于 20 的 年 份",
+    "eng_ids": [
+        "304_0"
+    ],
+    "raw_english_utterances": [
+        "show year from 1840 to 2000 that had fewer than 20 shark attacks"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "D",
+                    "value": "daterange",
+                    "col": "鲨鱼.年"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 4,
+            "inter_utterance": "1840 到 2000 年 间"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "T",
+                    "value": "鲨鱼"
+                },
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 5,
+            "right_index": 7,
+            "inter_utterance": "攻击"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "N",
+                    "value": "numberange"
+                }
+            ],
+            "left_index": 10,
+            "right_index": 12,
+            "inter_utterance": "少 于 20"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.年"
+                }
+            ],
+            "left_index": 14,
+            "right_index": 14,
+            "inter_utterance": "年"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.年",
+            "鲨鱼.攻击.sum"
+        ],
+        "where": [
+            {
+                "鲨鱼.攻击.sum": [
+                    "numberange"
+                ]
+            },
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.年"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "sum(鲨.攻击) < 20L ",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "sum(鲨.攻击) "
+    }
+}

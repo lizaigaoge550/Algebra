@@ -1,0 +1,72 @@
+{
+    "id": "0005",
+    "raw_utterance": "1840 年 后 ， 那 儿 每 年 发 生 多 少 次 鲨 鱼 攻击",
+    "eng_ids": [
+        "310_1"
+    ],
+    "raw_english_utterances": [
+        "since 1840, how many shark attacks have there been per year?"
+    ],
+    "new_tag_utterance": [
+        {
+            "tags": [
+                {
+                    "Type": "N",
+                    "value": "numberange"
+                }
+            ],
+            "left_index": 0,
+            "right_index": 2,
+            "inter_utterance": "1840 年 后"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.年"
+                }
+            ],
+            "left_index": 6,
+            "right_index": 6,
+            "inter_utterance": "年"
+        },
+        {
+            "tags": [
+                {
+                    "Type": "c",
+                    "value": "鲨鱼.攻击"
+                }
+            ],
+            "left_index": 14,
+            "right_index": 14,
+            "inter_utterance": "攻击"
+        }
+    ],
+    "sql_info": {
+        "from": [
+            "鲨鱼"
+        ],
+        "select": [
+            "鲨鱼.年",
+            "鲨鱼.攻击.sum"
+        ],
+        "where": [
+            {
+                "鲨鱼.年": [
+                    "daterange"
+                ]
+            }
+        ],
+        "groupby": [
+            "鲨鱼.年"
+        ],
+        "orderby": []
+    },
+    "raw_sql_info": {
+        "where": "",
+        "from": "鲨鱼:鲨 ",
+        "groupby": "",
+        "orderby": "",
+        "select": "鲨.年 ### sum(鲨.攻击) "
+    }
+}
