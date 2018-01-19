@@ -35,32 +35,36 @@ def no_pat(tag,index):
             s.append(tag[index][i])
     return s
 
-def generate_multi_tags(tag):
+
+
+def generate_multi_tags(tags):
     #tag中可能有pat所以要拆分
     #获取pat的索引
     pat_index = []
     index_count = 0
-    for tag_index in range(len(tag)):
-        if 'pat' in tag[tag_index]:
-            pat_index.append(tag_index)
-            index_count += 1
+    for tag_index in range(len(tags)):
+        for tag in tags[tag_index]:
+            if 'pat' in tag:
+                pat_index.append(tag_index)
+                index_count += 1
+                break
+    if index_count == 0:
+        return [tags]
     #产生索引
     s = []
     generate_index([],s,index_count)
     data = []
 
     for s_index in range(len(s)):
-        tag_copy = copy.copy(tag)
+        tag_copy = copy.copy(tags)
         for index,value in zip(pat_index,s[s_index]):
             if value == 0:
                 tag_copy[index] = []
             else:
                 tag_copy[index] = no_pat(tag_copy,index)
+        tag_copy = list(filter(lambda a:a!=[],tag_copy))
         data.append(tag_copy)
     return data
-
-
-
 
 
 def read_data(path):
@@ -68,11 +72,6 @@ def read_data(path):
     sql = {}
     abstract_data = {}
     for eachfile in glob.glob(os.path.join(path,'*')):
-        # try:
-        #     item = json.load(open(eachfile,encoding='utf-8'))
-        # except Exception as e:
-        #     print(eachfile)
-        #     print(e)
         item = json.load(open(eachfile,encoding='utf-8-sig'))
         # 拿出tag
         utterance = item['new_tag_utterance']
@@ -90,7 +89,6 @@ def read_data(path):
             for j in range(len(tag)):
                 # 首先提取type
                 value = tag[j]['Type']
-                if value == 'Vistype': continue
                 # #如果value 是 c 和 V, T 的话
                 if value == 'c' or value == 'v' or value == 'T' or value == 'N' or value == 'D' or value == 'Blank' or value == 'Excluding':
                     try:
@@ -128,73 +126,12 @@ def read_data(path):
                     else:
                         print(value)
                         raise ('Type is not right')
-                else:
-                    func = value.split('.')[-1]  # 有F.G, F.min..., F.argmax, F.count-c(等价于F,sum), F.count-t(F:count(T)), Dir.dsc, F.order
-                    if func == 'G':
-                        try:
-                            if 'EachFilter' in tag[j]['values']: continue
-                        except:
-                            print(tag)
-                            print(eachfile)
-                            exit(2000)
-                        if 'C' in tag[j]['values']: continue
-                        g = Group(None, None, None)
-                        g.value = 'lambda(F,c).G'
-                        try:
-                            label.append([g,left,right])
-                        except:
-                            print(eachfile)
-                            exit(100)
-                    elif func == 'min' or func == 'max' or func == 'avg':
-                        f = get_opt(func)
-                        f.value = 'lambda(c).F'
-                        label.append([f,left,right])
-                    elif func == 'sum':
-                        if flag == False:
-                            f = get_opt(func)
-                            f.value = 'lambda(c).F'
-                            flag = True
-                            label.append([f,left,right])
-                    elif func == 'argmin' or func == 'argmax':
-                        f = get_opt(func)
-                        if 'EachFilter' in tag[j]['values']:
-                            f.value = 'lambda(F,EachFilter).F'
-                        else:
-                            f.value = 'lambda(F,c).F'
-                        label.append([f,left,right])
-                    elif func == 'count-c':
-                        if flag == False:
-                            f = Count(None, None, None)
-                            f.value = 'lambda(c).F'
-                            flag = True
-                            label.append([f,left,right])
-                    elif func == 'count-t':
-                        f = Count(None, None, None)
-                        f.value = 'lambda(T).F'
-
-                        label.append([f,left,right])
-                    elif func == 'order':
-                        f = Order(None, None, None)
-                        f.value = 'lambda(c,T,dir).T'
-                        label.append([f,left,right])
-                    elif func == 'dsc':
-                        f = Dir(None, None, None, func)
-                        label.append([f,left,right])
-                    elif func == 'pat':
-                        continue
-
-                    else:
-                        print(value)
-                        print(eachfile)
-                        raise ('Type is not right')
             if len(label): tags.append(label)
         if len(tags) == 0: print(item);continue
         tags = generate_multi_tags(tags)
         data[item["raw_utterance"]] = tags
         sql[item['raw_utterance']] = item["sql_info"]
         abstract_data[item['raw_utterance']] = item['abstract_utterance']
-        # print('id : {0}, len : {1}'.format(id,len(tags)))
-        #id += 1
     return data, sql, abstract_data
 
 

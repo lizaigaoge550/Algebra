@@ -12,7 +12,7 @@ def fill_in_slot(opt,param,prefix):
     # V --> Filter:In(c=V.c,V)
     # T --> F F:count(T)
     # D --> Filter:In(c=D.c,V)
-    if type(opt) == Sum: #一个参数
+    if type(opt) == Sum or type(opt) == Max or type(opt) == Min or type(opt) == Avg: #一个参数
         if param.c_type == 'number': #sum操作
             opt.param.val = param
             opt.c_name = param.c_name
@@ -28,11 +28,6 @@ def fill_in_slot(opt,param,prefix):
             opt.t_name = param.t_name
             opt.c_type = 'number'
 
-        # elif param.c_type == 'string': #count 操作
-        #     opt.param.val = param
-        #     opt.c_name = param.c_name
-        #     opt.t_name = param.t_name
-        #     opt.c_type = 'number'
         else:
             opt.param.val = param
             opt.c_name = param.c_name
@@ -89,10 +84,6 @@ def format_(l):
     if len(a) == 1: return a[0]
     else:return ",".join(a)
 
-# c --> F F:count(c) c string, F:sum(c) c number
-# V --> Filter:In(c=V.c,V)
-# T --> F F:count(T)
-# D --> Filter:In(c=D.c,D)
 def type_rasing(gDict, nodelist, start, end, key=""):
     values = []
     for node in nodelist:
@@ -113,17 +104,4 @@ def type_rasing(gDict, nodelist, start, end, key=""):
                     nodelist.append(node)
         else:
             continue
-            # prefix, v = value.split('.') #lambda(c).T
-            # for rhs, lhs, func in gDict:
-            #     if rhs == v:
-            #         l = prefix+'.'+lhs #lambda(c).T
-            #         #提取参数
-            #         l = 'lambda('+ format_(l) + ')'+'.'+lhs
-            #         if l not in values:
-            #             index = values.index(value)
-            #             option = createVal(lhs,func,nodelist[index],l)
-            #             if option == None:continue
-            #             values.append(l)
-            #             node = Node(nodelist[index], None, option)
-            #             nodelist.append(node)
     return nodelist

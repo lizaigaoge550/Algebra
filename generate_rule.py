@@ -1,7 +1,12 @@
-from opt_class import Argmin, Argmax, Modify
+from opt_class import  Modify, Max,Min,Avg,Count,Sum
 import re
 import numpy as np
 
+def check(node):
+    if type(node) == Max or type(node) == Min or type(node) == Avg or type(node) == Count or type(node) == Sum:
+        return type(node).__name__.lower()
+    else:
+        return node.value
 
 
 #这版已经没argmax 和 argmin了 多了 blank 和 excluding
@@ -10,25 +15,63 @@ def pre_order(root):
     #首先写入根节点信息
     if root == None: return
     if root.lchild and root.rchild:
-        pattern = root.val.value + ":" + root.lchild.val.value+"#"+root.rchild.val.value
+        pattern = check(root.val) + ":" + check(root.lchild.val) +"#"+ check(root.rchild.val)
         span = "(" + str(root.start)+','+str(root.end) + ")" + ":" + "(" + str(root.lchild.start)+','+str(root.lchild.end) + ")"+\
                " "+"(" + str(root.rchild.start)+','+str(root.rchild.end) + ")"
         #fw.write(pattern+'\t'+span+'\n')
         l.append(pattern+'\t'+span)
     elif root.lchild:
-        pattern = root.val.value + ":" + root.lchild.val.value
+        pattern = check(root.val) + ":" + check(root.lchild.val)
         span = "(" + str(root.start) + ',' + str(root.end) + ")" + ":" + "(" + str(root.lchild.start) + ',' + str(
             root.lchild.end) + ")"
         #fw.write(pattern + '\t' + span+'\n')
         l.append(pattern+'\t'+span)
     elif root.rchild:
-        pattern = root.val.value + ":" + root.rchild.val.value
+        pattern = check(root.val) + ":" + check(root.rchild.val)
         span = "(" + str(root.start) + ',' + str(root.end) + ")" + ":" + "(" + str(root.rchild.start) + ',' + str(
             root.rchild.end) + ")"
         #fw.write(pattern + '\t' + span+'\n')
         l.append(pattern+'\t'+span)
     pre_order(root.lchild)
     pre_order(root.rchild)
+
+
+
+def expandSpan(left,right,utterance,scope):
+    #找到前一个tag
+    flagStart = False;flagStartTrunc = False
+    flagEnd = False;flagEndTrunc = False
+    if left > 0:
+        for start in range(left-1,-1,-1):
+            flagStart = True
+            if utterance[start] == 'c' or utterance[start] == 'v' or utterance[start] == 'N' or utterance[start] == 'T' or utterance[start] == 'D' or utterance[start] == 'blank' \
+                or utterance[start] == 'Excluding':
+                flagStartTrunc = True
+                break
+        if flagStartTrunc == True:
+            start += 1
+
+
+    if right < len(utterance)-1:
+        for end in range(right+1,len(utterance)):
+            flagEnd = True
+            if utterance[start] == 'c' or utterance[start] == 'v' or utterance[start] == 'N' or utterance[
+                start] == 'T' or utterance[start] == 'D' or utterance[start] == 'blank' \
+                    or utterance[start] == 'Excluding':
+                flagEndTrunc = True
+                break
+        if flagEndTrunc == False:
+            end += 1
+
+    if flagStart == True and flagEnd == True:
+        return utterance[start:end]
+    elif flagStart == True:
+        return utterance[start:right+1]
+    elif flagEnd == True:
+        return utterance[left:end]
+    else:
+        return scope
+
 
 
 def extractFeatures(root,l,r):
@@ -116,12 +159,10 @@ def post_processing(utterance):
 
             if left == right:
                 newpattern = root + ':' + utterance[left]
+                #扩充scope
+                if 'max' in pattern or 'min' in pattern or 'avg' in pattern or 'sum' in pattern or 'count'in pattern:
+                    scope = expandSpan(left,right,utterance,scope)
                 rl.append([pattern, np.array([0, 0, 0, 0, 0, 0, 0, 0, 0]), newpattern, scope])
-
-            #根节点type-rasing的情况, 去掉
-            #else:
-            #    newpattern = pattern
-
 
         else:
             lchild, rchild = child.split('#')#F,  lambda(F)
