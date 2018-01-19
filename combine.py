@@ -161,15 +161,6 @@ def composition(node1,node2,option,exp, key): #lambda(F).G T --> lambda(F).T=pro
 
     elif type(cls) == Not:
         #有两种情况 1-->c, Blank, 2-->Filter, Excluding
-        # if (node1.value == 'c' and node2.value == 'blank') or (node1.value == 'blank' and node2.value == 'c'):
-        #     cls.param_1.val = node1
-        #     cls.param_2.val = node2
-        #     if node1.value == 'c':
-        #         cls.c_name = node1.c_name
-        #         cls.c_type = node1.c_type
-        #     else:
-        #         cls.c_name = node2.c_name
-        #         cls.c_type = node2.c_type
         if (node1.value == 'Filter' and node2.value == 'Excluding') or (node2.value == 'Filter' and node1.value == 'Excluding'):
             cls.param_1.val = node1
             cls.param_2.val = node2
@@ -209,13 +200,6 @@ def composition(node1,node2,option,exp, key): #lambda(F).G T --> lambda(F).T=pro
             return None
 
     elif type(cls) == Modify: #Filter c -- > c, Filter F --> F, Filter G --> G
-        # node1 和 node2 如果是F不能是argmax or argmin or sum or count 因为这些函数执行为就一个数, 没办法Filter
-        #if node1.value == 'F' and (type(node1) == Argmin or type(node1) == Argmax or type(node1)==Count or type(node1)==Sum): return None
-
-        #if node2.value == 'F' and (type(node2) == Argmin or type(node2) == Argmax or type(node1)==Count or type(node1)==Sum): return None
-
-        #现在也可以是 EachFilter, c -> c , EachFilter, F --> F,
-        #两种情况 一种是 F,G (Filter 和 EachFilter的操作一样)
         if (node1.value == 'F' or node1.value == 'G' or node1.value == 'c') or (node2.value == 'F' or node2.value == 'G' or node2.value == 'c'):
             if node1.c_name != node2.c_name:
                 cls.param_1.val = node1
