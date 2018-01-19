@@ -8,13 +8,6 @@ from utils import get_opt
 from getTable import get_table
 
 import copy
-#t_name = 'shark_attack'
-# t_name = 'job'
-# #Table = {"country":'string', 'gender':'string', 'fatality':'string','activity':'string','attack':'number','year':'date', 'count(t)':'number'}
-# Table = {'field':'string','title':'string', 'posting_date':'date', 'desired_year_experience':'number',
-#          'required_academic_qualification':'string','company':'string','area':'string',
-#          'city':'string','country':'string','programming_language':'string','salary':'number','plantform':'string','count(t)':'number'
-#          }
 t_name,Table = get_table()
 
 
