@@ -1,9 +1,11 @@
+from __future__ import print_function
 from class_file import *
 from opt_class import *
 from node import Node
 from generate_rule import generateRule
 import os
 from getTable import get_table
+
 s = ''
 
 'G --> T Project'
@@ -516,19 +518,14 @@ def output_sql_tree(new,res,node,key,file_name):
     global s
     s = ''
     dfs(node.val,key)
-    r = json.dumps(new)
-    r1 = json.dumps(res)
     file_name = re.sub("[\.\!\/_,$%^*?(+\"\']+|[+——！，。？、~@#￥%……&*（）]", "",file_name)
     f = open(os.path.join('sql_tree',file_name),'a',encoding='utf-8')
 
     f.write(s+'\n')
-    f.write("orig : ")
-    json.dump(r1,f,ensure_ascii=False)
+    f.write("orig : {0}".format(res)+'\n')
     f.write('\n')
-    f.write("new : ")
-    json.dump(r,f,ensure_ascii=False)
+    f.write("new : {0}".format(new)+'\n')
     f.write('\n\n')
-
     f.write('\n')
 
 
@@ -764,6 +761,25 @@ def compare(predict, true, key):
     else:
         return False,predict
 
+
+def output_content(result,abs):
+    #文件名
+    file_name = result[0]['utterance']
+    #文件夹, 叫什么呢？？
+    dir_name = 'featureDir'
+    if not os.path.exists(dir_name): os.mkdir(dir_name)
+    file_name = re.sub("[\.\!\/_,:$%^*?(+\"\']+|[+——！，。？、~@#￥%……&*（）]", "", file_name)
+    fw = open(os.path.join(dir_name,str(file_name)),'w',encoding='utf-8')
+    fw.write('utterance : {0}'.format(abs)+'\n')
+    for result_index in range(len(result)):
+        content = result[result_index]
+        for i in range(len(content['content'])):
+            pattern , scope = content['content'][i]
+            fw.write("pattern : {0}, scope : {1}".format(pattern,scope)+'\n')
+        fw.write("label : {0}".format(content['label'])+'\n\n')
+
+
+
 def generate_data(dic,length,key,abs,true_sql):
     global res
     global s
@@ -804,6 +820,8 @@ def generate_data(dic,length,key,abs,true_sql):
             dic['label'] = 0
         dic['utterance'] = key
         result.append(dic)
+    if len(result) > 0:
+        output_content(result, abs)
     if analysis == True and all_correct == False:
         return result
     else: return []

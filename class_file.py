@@ -23,25 +23,6 @@ class TClass(BaseClass):
         return 'T'
 
 
-class CClass(object):
-    def __init__(self,cs):
-        self.c_list = cs
-        if len(cs) > 0:
-            self.t_name = cs[0].t_name
-            self.c_name = [c.c_name for c in cs]
-            self.c_type = [c.c_type for c in cs]
-            self.value = 'C'
-            self.description = [c.description for c in cs]
-        else:
-            self.t_name = None
-            self.c_name = None
-            self.c_type = None
-            self.value = None
-    def __str__(self):
-        return "C"
-
-
-
 
 class VClass(BaseClass):
     def __init__(self,t_name, c_name, c_type, value):

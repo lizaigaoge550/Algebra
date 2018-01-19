@@ -2,7 +2,7 @@
 import re
 from node import Node
 from opt_class import *
-from class_file import CClass,TClass
+from class_file import TClass
 from type_raising import type_rasing
 from combine import composition
 from utils import extract_option,union,get_opt
@@ -277,35 +277,19 @@ def createVal_2(node1, node2, option, exp):  # lambda(F).G T --> lambda(F).T=pro
 
 
 def createVal_3(node1, node2, option, exp, key):
-    def checkCClass(l):
-        t_names = []
-        for i in range(len(l)):
-            if l[i].t_name not in t_names:
-                t_names.append(l[i].t_name)
-            if len(t_names) == 2: return False
-        return True
-
-    def generate(mode):
-        l = []
-        if type(node1) == mode:
-            l.extend(node1.c_list)
-            l.append(node2)
-        elif type(node2) == mode:
-            l.extend(node2.c_list)
-            l.append(node1)
-        else:
-            l.append(node1)
-            l.append(node2)
-        return l
-
+    def padding(cls,node1,node2):
+        cls.t_name = node1.t_name
+        cls.c_type = union(node1.c_type,node2.c_type)
+        cls.c_name = union(node1.c_type,node2.c_type)
+        cls.value = exp
+        cls.param_2.val = node1
+        cls.param_1.val = node2
+        return cls
     # 这个option可能是空
     if option == None:
         if exp == 'C':
-            l = generate(CClass)
-            if checkCClass(l):
-                cls = CClass(l)
-            else:
-                return None
+            cls = CClass(None,None,None)
+            cls = padding(cls,node1,node2)
         else:
             raise ('CreateVal_3 is error when option is None : {0}'.format(exp))
         return cls

@@ -35,6 +35,17 @@ class Modify(BaseClass,OptBaseClass):
         self.param_list = [self.param_1,self.param_2]
 
 
+class CClass(BaseClass,OptBaseClass):
+    def __init__(self,t_name,c_name,c_type):
+        BaseClass.__init__(self,t_name,c_name,c_type)
+        OptBaseClass.__init__(self)
+        self.param_list = [self.param_1,self.param_2]
+    def __str__(self):
+        return "C"
+
+
+
+
 class In(BaseClass,OptBaseClass):
     # In(c,N) c.c_type = N.c_type
     # In(F,N) F.c_type = N.c_type
@@ -51,18 +62,6 @@ class Combine(BaseClass,OptBaseClass):
         self.param_list = [self.param_1,self.param_2]
 
 
-
-class Argmax(BaseClass,OptBaseClass):
-    def __init__(self,t_name, c_name, c_type):
-        BaseClass.__init__(self,t_name, c_name, c_type)
-        OptBaseClass.__init__(self)
-        self.param_list = [self.param_1,self.param_2]
-
-class Argmin(BaseClass,OptBaseClass):
-    def __init__(self,t_name, c_name, c_type):
-        BaseClass.__init__(self,t_name, c_name, c_type)
-        OptBaseClass.__init__(self)
-        self.param_list = [self.param_1,self.param_2]
 
 
 class Select(BaseClass,OptBaseClass): #Select(Filter, T)

@@ -44,7 +44,8 @@ def expandSpan(left,right,utterance,scope):
     if left > 0:
         for start in range(left-1,-1,-1):
             flagStart = True
-            if utterance[start] == 'c' or utterance[start] == 'v' or utterance[start] == 'N' or utterance[start] == 'T' or utterance[start] == 'D' or utterance[start] == 'blank' \
+            if utterance[start] == 'c' or utterance[start] == 'v' or utterance[start] == 'N' or utterance[start] == 'T' \
+                    or utterance[start] == 'D' or utterance[start] == 'blank' \
                 or utterance[start] == 'Excluding':
                 flagStartTrunc = True
                 break
@@ -55,9 +56,9 @@ def expandSpan(left,right,utterance,scope):
     if right < len(utterance)-1:
         for end in range(right+1,len(utterance)):
             flagEnd = True
-            if utterance[start] == 'c' or utterance[start] == 'v' or utterance[start] == 'N' or utterance[
-                start] == 'T' or utterance[start] == 'D' or utterance[start] == 'blank' \
-                    or utterance[start] == 'Excluding':
+            if utterance[end] == 'c' or utterance[end] == 'v' or utterance[end] == 'N' or utterance[
+                end] == 'T' or utterance[end] == 'D' or utterance[end] == 'blank' \
+                    or utterance[end] == 'Excluding':
                 flagEndTrunc = True
                 break
         if flagEndTrunc == False:
@@ -158,31 +159,19 @@ def post_processing(utterance):
         if '#' not in child: #type-rasing的情况
 
             if left == right:
-                newpattern = root + ':' + utterance[left]
                 #扩充scope
                 if 'max' in pattern or 'min' in pattern or 'avg' in pattern or 'sum' in pattern or 'count'in pattern:
                     scope = expandSpan(left,right,utterance,scope)
-                rl.append([pattern, np.array([0, 0, 0, 0, 0, 0, 0, 0, 0]), newpattern, scope])
+                rl.append([pattern, scope])
 
         else:
             lchild, rchild = child.split('#')#F,  lambda(F)
-
-            lchildspan, rchildspan = lhsspan.split()
-
-
-            #特征向量
-            features  = extractFeatures(root,lchild,rchild)
-
             # 新的pattern
             root = removeLambda(root)
             lchild = removeLambda(lchild)
             rchild = removeLambda(rchild)
             newpattern = root+':'+lchild+','+rchild
-
-            #这个叫什么呢？ 叫newpattern_1吧
-            newpattern_1 = extractPattern(rootspan,lchildspan,rchildspan,root, lchild, rchild, utterance)
-
-            rl.append([newpattern,features,newpattern_1,scope])
+            rl.append([newpattern,scope])
     return rl
 
 l = []
