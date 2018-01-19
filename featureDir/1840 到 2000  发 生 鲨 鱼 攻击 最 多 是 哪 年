@@ -1,0 +1,276 @@
+utterance : D ， 发 生 鲨 鱼 c 最 多 是 哪 c
+pattern : Filter:D,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : c:Filter,c, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : Filter:c,N, scope : ['c', '最', '多']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:count,F, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:min,F, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:max,F, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:sum,F, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:Filter,G, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : G:F,c, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:count,N, scope : ['c', '最', '多']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:F,count, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:count,N, scope : ['c', '最', '多']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:Filter,G, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : G:F,c, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:min,N, scope : ['c', '最', '多']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:F,count, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:min,N, scope : ['c', '最', '多']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:Filter,G, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : G:F,c, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:max,N, scope : ['c', '最', '多']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:F,count, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:max,N, scope : ['c', '最', '多']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:Filter,G, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : G:F,c, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:sum,N, scope : ['c', '最', '多']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : F:F,count, scope : ['c', '最', '多', '是', '哪', 'c']
+pattern : F:sum,N, scope : ['c', '最', '多']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:F,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:F,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,min, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:F,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,max, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : F:F,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,sum, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : F:N,count, scope : ['最', '多', '是', '哪', 'c']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : c:Filter,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:Filter,Filter, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : Filter:c,N, scope : ['c', '最', '多']
+label : 0
+
+pattern : F:Filter,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:Filter,Filter, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : Filter:c,N, scope : ['c', '最', '多']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:count,N, scope : ['c', '最', '多']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:count,N, scope : ['c', '最', '多']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:min,N, scope : ['c', '最', '多']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:min,N, scope : ['c', '最', '多']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:max,N, scope : ['c', '最', '多']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:max,N, scope : ['c', '最', '多']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:sum,N, scope : ['c', '最', '多']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:Filter,F, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : Filter:D, scope : ['D']
+pattern : F:sum,N, scope : ['c', '最', '多']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : c:Filter,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:c,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : c:Filter,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+label : 0
+
+pattern : F:Filter,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : Filter:c,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : c:Filter,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : count:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,min, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,min, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : min:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,max, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 0
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,max, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : max:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
+pattern : G:F,c, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,sum, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+label : 1
+
+pattern : F:F,count, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪', 'c']
+pattern : F:F,N, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c', '最', '多']
+pattern : F:Filter,sum, scope : ['D', '，', '发', '生', '鲨', '鱼', 'c']
+pattern : Filter:D, scope : ['D']
+pattern : sum:c, scope : ['，', '发', '生', '鲨', '鱼', 'c', '最', '多', '是', '哪']
+pattern : count:c, scope : ['最', '多', '是', '哪', 'c']
+label : 0
+
