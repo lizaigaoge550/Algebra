@@ -436,6 +436,5 @@ def bottom_up_parser(node1, node2, gDict,key):
         if nodes != []:
             # type_rasing
             l = nodes
-            #l = type_rasing(gDict, l, key)
             g += l
     return g
